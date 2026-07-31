@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Employee Management Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="header">
+
+        <div>
+
+            <h1>Employee Management Dashboard</h1>
+
+            <p>Manage Employees Efficiently</p>
+
+        </div>
+
+        <button id="themeBtn">
+            🌙 Dark Mode
+        </button>
+
+    </header>
+
+    <!-- ================= DASHBOARD ================= -->
+
+    <section class="dashboard">
+
+        <div class="card">
+
+            <h2 id="totalEmployees">0</h2>
+
+            <p>Total Employees</p>
+
+        </div>
+
+        <div class="card">
+
+            <h2 id="activeEmployees">0</h2>
+
+            <p>Active Employees</p>
+
+        </div>
+
+        <div class="card">
+
+            <h2 id="departmentCount">0</h2>
+
+            <p>Departments</p>
+
+        </div>
+
+    </section>
+
+    <!-- ================= FORM ================= -->
+
+    <section class="form-container">
+
+        <h2>Add / Update Employee</h2>
+
+        <form id="employeeForm">
+
+            <input
+                type="hidden"
+                id="employeeId"
+            >
+
+            <input
+                type="text"
+                id="name"
+                placeholder="Employee Name"
+                required
+            >
+
+            <input
+                type="email"
+                id="email"
+                placeholder="Email Address"
+                required
+            >
+
+            <select id="department" required>
+
+                <option value="">Select Department</option>
+
+                <option>Development</option>
+
+                <option>HR</option>
+
+                <option>Finance</option>
+
+                <option>Marketing</option>
+
+                <option>Sales</option>
+
+            </select>
+
+            <button
+                type="submit"
+                id="submitBtn">
+
+                Add Employee
+
+            </button>
+
+        </form>
+
+    </section>
+
+    <!-- ================= SEARCH ================= -->
+
+    <section class="search-container">
+
+        <input
+            type="text"
+            id="search"
+            placeholder="Search employee..."
+        >
+
+        <select id="filterDepartment">
+
+            <option value="">All Departments</option>
+
+            <option>Development</option>
+
+            <option>HR</option>
+
+            <option>Finance</option>
+
+            <option>Marketing</option>
+
+            <option>Sales</option>
+
+        </select>
+
+        <button id="exportCSV">
+
+            Export CSV
+
+        </button>
+
+    </section>
+
+    <!-- ================= TABLE ================= -->
+
+    <section class="table-container">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Name</th>
+
+                    <th>Email</th>
+
+                    <th>Department</th>
+
+                    <th>Status</th>
+
+                    <th>Actions</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="employeeTable">
+
+            </tbody>
+
+        </table>
+
+    </section>
+
+    <!-- ================= TOAST ================= -->
+
+    <div
+        id="toast"
+        class="toast">
+
+    </div>
+    <section class="chart-container">
+
+    <div class="chart-card">
+
+        <h2>Department Distribution</h2>
+
+        <canvas id="departmentChart"></canvas>
+
+    </div>
+
+</section>
+
+<footer>
+
+    <p>
+        © 2026 Employee Management Dashboard | Developed by Saumya Singh
+    </p>
+
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
